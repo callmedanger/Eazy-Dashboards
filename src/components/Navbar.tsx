@@ -13,14 +13,28 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      // Determine active section based on scroll offset
-      const sections = ['hero', 'problem', 'transformation', 'how-it-works', 'features', 'industries', 'comparison', 'faq', 'contact'];
-      const scrollPos = window.scrollY + 200;
+      // Top of page
+      if (window.scrollY < 120) {
+        setActiveSection('hero');
+        return;
+      }
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const id = sections[i];
+      // Bottom of page
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // Track sections accurately using rendered viewport bounding rect
+      // Section only activates when the focal line (45% down the viewport) is inside its bounds
+      const sections = ['hero', 'problem', 'transformation', 'how-it-works', 'features', 'industries', 'comparison', 'faq', 'contact'];
+      const focalLine = window.innerHeight * 0.45;
+
+      for (const id of sections) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollPos) {
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= focalLine && rect.bottom > focalLine) {
           setActiveSection(id);
           break;
         }
@@ -36,7 +50,7 @@ export const Navbar: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    clock.scrollTo(href);
+    clock.scrollTo(href, { offset: -64 });
   };
 
   return (

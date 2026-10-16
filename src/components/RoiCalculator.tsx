@@ -37,18 +37,18 @@ export const RoiCalculator: React.FC = () => {
             <Calculator className="w-3.5 h-3.5 text-teal" />
             <span>INTERACTIVE ROI SIMULATOR</span>
             <span className="text-navy/30">•</span>
-            <span className="text-teal font-semibold">PAKISTANI BAZAAR METRICS</span>
+            <span className="text-teal font-semibold">BUSINESS FINANCIAL BENCHMARKS</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-navy tracking-display leading-tightest mb-4">
             Calculate your monthly <br />
             <span className="text-teal underline decoration-teal/30 underline-offset-8">
-              khata & register leakage.
+              operational & credit leakage.
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-navy/70 font-body">
-            Adjust the sliders below to see how much cash and time your business loses to manual registers every month.
+            Adjust the sliders below to calculate how much cash and labor your business loses to manual registers and credit delays every month.
           </p>
         </div>
 
@@ -77,17 +77,17 @@ export const RoiCalculator: React.FC = () => {
                   className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-teal"
                 />
                 <div className="flex justify-between text-[10px] text-navy/40 mt-1">
-                  <span>Small Mart (10)</span>
+                  <span>Small Retail (10)</span>
                   <span>Busy Store (150)</span>
-                  <span>Superstore (300+)</span>
+                  <span>High-Volume Superstore (300+)</span>
                 </div>
               </div>
 
-              {/* Slider 2: Monthly Udhaar */}
+              {/* Slider 2: Monthly Credit (Receivables) */}
               <div>
                 <div className="flex items-center justify-between text-xs mb-2">
                   <span className="font-bold text-navy flex items-center gap-1.5">
-                    <span>2. Average Outstanding Udhaar (Credit):</span>
+                    <span>2. Average Outstanding Customer Credit (Receivables):</span>
                   </span>
                   <span className="px-3 py-1 rounded-md bg-gold/15 text-navy font-bold text-sm">
                     {formatPkr(monthlyUdhaar)}
@@ -103,9 +103,9 @@ export const RoiCalculator: React.FC = () => {
                   className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-teal"
                 />
                 <div className="flex justify-between text-[10px] text-navy/40 mt-1">
-                  <span>PKR 1 Lakh</span>
-                  <span>PKR 25 Lakhs</span>
-                  <span>PKR 50 Lakhs</span>
+                  <span>PKR 100,000</span>
+                  <span>PKR 2,500,000</span>
+                  <span>PKR 5,000,000</span>
                 </div>
               </div>
 
@@ -129,16 +129,16 @@ export const RoiCalculator: React.FC = () => {
                   className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-teal"
                 />
                 <div className="flex justify-between text-[10px] text-navy/40 mt-1">
-                  <span>Single Shop (1)</span>
-                  <span>Multiple Godowns (4)</span>
-                  <span>Multi-City Chain (8)</span>
+                  <span>Single Store (1)</span>
+                  <span>Multiple Warehouses (4)</span>
+                  <span>Multi-Location Chain (8)</span>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 pt-4 border-t border-navy/10 flex items-center gap-2 text-xs font-mono text-navy/60">
               <ShieldCheck className="w-4 h-4 text-teal" />
-              <span>Calculated from real Pakistani retail & wholesale audit patterns.</span>
+              <span>Calculated from verified commercial retail and distribution audit benchmarks.</span>
             </div>
           </div>
 
@@ -148,9 +148,9 @@ export const RoiCalculator: React.FC = () => {
             <div>
               <div className="flex items-center justify-between font-mono text-xs mb-4">
                 <span className="px-2.5 py-0.5 rounded bg-error/20 text-error border border-error/30 font-bold">
-                  POTENTIAL MONTHLY LEAK
+                  ESTIMATED MONTHLY LEAKAGE
                 </span>
-                <span className="text-white/40 text-[11px]">MONTHLY LOSS</span>
+                <span className="text-white/40 text-[11px]">MONTHLY CASH LOSS</span>
               </div>
 
               {/* Big Leaked Amount */}
@@ -158,7 +158,7 @@ export const RoiCalculator: React.FC = () => {
                 {formatPkr(estimatedCashLeak)}
               </div>
               <p className="text-xs font-body text-white/70 mb-6">
-                Lost every month in untracked credit balance, delayed recovery, and counter formula mistakes.
+                Estimated monthly losses across untracked credit, delayed collections, inventory shrinkage, and manual billing errors.
               </p>
 
               {/* Breakdown Cards */}
@@ -166,7 +166,7 @@ export const RoiCalculator: React.FC = () => {
                 <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between">
                   <span className="flex items-center gap-2 text-white/70">
                     <Clock className="w-3.5 h-3.5 text-teal" />
-                    <span>Evening Reconciling:</span>
+                    <span>Manual Evening Reconciliation:</span>
                   </span>
                   <span className="text-gold font-bold">{hoursWastedMonthly} Hours / Month</span>
                 </div>
@@ -174,7 +174,7 @@ export const RoiCalculator: React.FC = () => {
                 <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between">
                   <span className="flex items-center gap-2 text-white/70">
                     <CheckCircle2 className="w-3.5 h-3.5 text-teal" />
-                    <span>Fast Udhaar Recovery:</span>
+                    <span>Accelerated Credit Recovery:</span>
                   </span>
                   <span className="text-teal font-bold">{formatPkr(recoveredUdhaarProjected)}</span>
                 </div>
@@ -182,9 +182,9 @@ export const RoiCalculator: React.FC = () => {
                 <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between">
                   <span className="flex items-center gap-2 text-white/70">
                     <TrendingUp className="w-3.5 h-3.5 text-teal" />
-                    <span>Multi-Branch Sync:</span>
+                    <span>Multi-Branch Stock Synchronization:</span>
                   </span>
-                  <span className="text-white font-bold">100% Zero-Stockout</span>
+                  <span className="text-white font-bold">Zero Stockouts</span>
                 </div>
               </div>
             </div>
@@ -200,7 +200,7 @@ export const RoiCalculator: React.FC = () => {
                 }}
                 className="btn-press w-full py-3.5 rounded-full bg-teal hover:bg-white text-navy font-bold font-mono text-xs tracking-mono flex items-center justify-center gap-2 shadow-md transition-colors"
               >
-                <span>Plug This Leak with Eazy ERP</span>
+                <span>Prevent Revenue Leakage with Eazy ERP</span>
                 <ArrowRight className="w-4 h-4 text-navy" />
               </a>
             </div>

@@ -64,7 +64,7 @@ export const FloatingDock: React.FC<FloatingDockProps> = ({ onOpenWhatsAppModal 
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border border-white/10 transition-colors btn-press"
         >
           <Calculator className="w-3.5 h-3.5 text-gold" />
-          <span className="hidden md:inline">Khata Leakage Calc</span>
+          <span className="hidden md:inline">Revenue Leakage Calc</span>
           <span className="md:hidden">Calc</span>
         </button>
 

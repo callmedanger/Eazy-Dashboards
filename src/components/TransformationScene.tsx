@@ -18,16 +18,15 @@ export const TransformationScene: React.FC = () => {
       ScrollTrigger.refresh();
     }, 200);
 
+    // Natural scroll scrub without screen pinning so the photo is never clipped
     const trigger = ScrollTrigger.create({
       trigger: container,
-      start: 'top top',
-      end: '+=150%',
-      pin: true,
-      scrub: 0.8,
+      start: 'top 65%',
+      end: 'bottom 35%',
+      scrub: 0.6,
       onUpdate: (self) => {
         // Only update from scroll if not actively user-dragging
         if (!isDraggingRef.current) {
-          // progress from 0 to 1
           const p = Math.max(0, Math.min(1, self.progress));
           setSliderProgress(p);
         }

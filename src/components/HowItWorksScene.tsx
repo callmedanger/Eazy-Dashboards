@@ -22,12 +22,11 @@ export const HowItWorksScene: React.FC = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Pin workflow spine and advance activeStep based on scroll progress
+    // Natural scroll scrub without screen pinning so the analyzer card is completely visible
     const trigger = ScrollTrigger.create({
       trigger: container,
-      start: 'top top',
-      end: '+=200%',
-      pin: true,
+      start: 'top 60%',
+      end: 'bottom 40%',
       scrub: 0.5,
       onUpdate: (self) => {
         const stepIndex = Math.min(3, Math.floor(self.progress * 4));
@@ -46,11 +45,11 @@ export const HowItWorksScene: React.FC = () => {
     <section
       id="how-it-works"
       ref={containerRef}
-      className="relative min-h-[100svh] w-full py-20 bg-sheet-grid-light flex flex-col justify-center border-b border-navy/10 overflow-hidden select-none"
+      className="relative min-h-[90svh] w-full py-12 sm:py-16 bg-sheet-grid-light flex flex-col justify-center border-b border-navy/10 overflow-hidden select-none"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-navy/20 bg-white text-navy font-mono text-xs tracking-mono mb-3">
             <Layers className="w-3.5 h-3.5 text-teal" />
             <span>{WORKFLOW_COPY.badge}</span>
@@ -68,7 +67,7 @@ export const HowItWorksScene: React.FC = () => {
         </div>
 
         {/* 4 Steps Navigation Spine */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
           {WORKFLOW_COPY.steps.map((s, idx) => {
             const isActive = activeStep === idx;
             const isCompleted = activeStep > idx;
@@ -78,7 +77,7 @@ export const HowItWorksScene: React.FC = () => {
                 key={s.step}
                 type="button"
                 onClick={() => setActiveStep(idx)}
-                className={`p-4 rounded-lg border text-left transition-all duration-200 btn-press cursor-pointer ${
+                className={`p-3 sm:p-4 rounded-lg border text-left transition-all duration-200 btn-press cursor-pointer ${
                   isActive
                     ? 'bg-navy text-white border-navy shadow-md'
                     : isCompleted
@@ -86,13 +85,13 @@ export const HowItWorksScene: React.FC = () => {
                     : 'bg-white/60 text-navy/60 border-navy/10 hover:border-navy/30'
                 }`}
               >
-                <div className="flex items-center justify-between font-mono text-xs mb-1.5">
+                <div className="flex items-center justify-between font-mono text-xs mb-1">
                   <span className={isActive ? 'text-teal font-bold' : 'text-navy/40 font-bold'}>
                     STATE {s.step}
                   </span>
                   <span className="text-[10px] opacity-60">{s.cellRef}</span>
                 </div>
-                <div className="text-base sm:text-lg font-display font-bold leading-snug">
+                <div className="text-sm sm:text-base font-display font-bold leading-snug">
                   {s.title}
                 </div>
               </button>
@@ -120,7 +119,7 @@ export const HowItWorksScene: React.FC = () => {
           </div>
 
           {/* Canvas Area that morphs continuously through 4 states */}
-          <div className="p-6 sm:p-8 min-h-[380px] flex flex-col justify-center">
+          <div className="p-5 sm:p-7 min-h-[300px] flex flex-col justify-center">
             {/* STATE 01: Upload (Raw Sheet Dropping In) */}
             {activeStep === 0 && (
               <div className="animate-in fade-in duration-300">

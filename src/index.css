@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Motion & Easing Tokens (Emil Kowalski + Apple Design) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Brand Colors */
+  --navy: #0B2A5B;
+  --teal: #1BA6A6;
+  --surface-light: #F9F9FB;
+  --surface-dark: #0A0C10;
+  --error-red: #E5484D;
+  --gold: #C9A24B;
+
+  /* Cell Grid Lines */
+  --cell-line-light: rgba(11, 42, 91, 0.06);
+  --cell-line-dark: rgba(255, 255, 255, 0.05);
+  --cell-bg-selected: rgba(27, 166, 166, 0.12);
+  --cell-border-selected: #1BA6A6;
+}
+
+/* Neutomni Hover Underline Effect */
+.neutomni-link {
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.neutomni-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  top: 100%;
+  left: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.neutomni-link:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+/* Editorial Serif Accent (Neutomni italic styling) */
+.font-editorial-italic {
+  font-family: Georgia, "Playfair Display", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Neutomni Pulsing Live Dot */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #1BA6A6;
+  border-radius: 9999px;
+  position: relative;
+  display: inline-block;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  border: 1.5px solid #1BA6A6;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Ambient Spotlight Glow for Dark Bento Cards (Linear / Raycast modern effect) */
+.spotlight-card {
+  position: relative;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(27, 166, 166, 0.65),
+    transparent 60%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms ease;
+  z-index: 10;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+html {
+  scroll-behavior: auto; /* Driven by ONE CLOCK (Lenis) */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--surface-light);
+  color: var(--surface-dark);
+}
+
+/* Hairline Spreadsheet Grid Backgrounds */
+.bg-sheet-grid-light {
+  background-color: #F5F4F0;
+  background-image: 
+    linear-gradient(to right, var(--cell-line-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--cell-line-light) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-sheet-grid-dark {
+  background-color: #0A0C10;
+  background-image: 
+    linear-gradient(to right, var(--cell-line-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--cell-line-dark) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Responsive Pressable Controls with 160ms ease-out */
+.btn-press {
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease;
+  will-change: transform;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Bento Card Press Feedback */
+.card-press {
+  transition: transform 160ms var(--ease-out), border-color 160ms ease;
+  will-change: transform;
+}
+
+.card-press:active {
+  transform: scale(0.97);
+}
+
+/* Formula Bar Styling */
+.formula-bar-container {
+  display: flex;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--cell-line-light);
+}
+
+/* Tab Bar Navigation Styles */
+.sheet-tab {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  border-top: 2px solid transparent;
+  transition: border-color 160ms var(--ease-out), background-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+
+.sheet-tab.active {
+  border-top-color: var(--teal);
+  background-color: #FFFFFF;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* Error Cell Strikethrough & Flash */
+.error-cell {
+  background-color: rgba(229, 72, 77, 0.08);
+  color: var(--error-red);
+  border-color: rgba(229, 72, 77, 0.3) !important;
+  font-weight: 600;
+}
+
+.live-cell {
+  background-color: rgba(27, 166, 166, 0.08);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* Origin-aware mobile menu */
+.menu-origin-top {
+  transform-origin: top center;
+  transition: transform 180ms var(--ease-out), opacity 180ms var(--ease-out);
+}
+
+/* Smooth Accordion Grid Transition */
+.accordion-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms var(--ease-out), opacity 200ms var(--ease-out);
+}
+
+.accordion-grid.open {
+  grid-template-rows: 1fr;
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduced Transparency Mode */
+@media (prefers-reduced-transparency: reduce) {
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+    background-color: #FFFFFF !important;
+  }
+  .dark .backdrop-blur-md,
+  .dark .backdrop-blur-lg,
+  .dark .backdrop-blur-xl {
+    background-color: #0A0C10 !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .border, [class*="border-"] {
+    border-width: 2px !important;
+    border-color: currentColor !important;
+  }
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

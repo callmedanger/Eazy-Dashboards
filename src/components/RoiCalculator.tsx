@@ -5,16 +5,16 @@ import { sound } from '../utils/sound';
 
 export const RoiCalculator: React.FC = () => {
   const [dailyBills, setDailyBills] = useState<number>(65);
-  const [monthlyUdhaar, setMonthlyUdhaar] = useState<number>(850000); // PKR 8.5 Lakhs
+  const [monthlyCredit, setMonthlyCredit] = useState<number>(850000); // PKR 850,000
   const [branches, setBranches] = useState<number>(2);
 
-  // Dynamic calculations tailored for Pakistani retail/wholesale businesses
+  // Dynamic calculations tailored for commercial retail/wholesale businesses
   // Formula error risk & duplicate billing factor: ~2.5% of total volume
-  // Udhaar delayed recovery leakage: ~5% tied up or lost annually
+  // Customer credit delayed recovery leakage: ~4.5% tied up or lost annually
   const monthlyVolume = dailyBills * 30 * 4500; // Average bill ~PKR 4,500
-  const estimatedCashLeak = Math.round((monthlyVolume * 0.012) + (monthlyUdhaar * 0.045));
+  const estimatedCashLeak = Math.round((monthlyVolume * 0.012) + (monthlyCredit * 0.045));
   const hoursWastedMonthly = Math.round((dailyBills * 0.45) * 30 / 60); // ~15-20 min per day closing registers
-  const recoveredUdhaarProjected = Math.round(monthlyUdhaar * 0.88);
+  const recoveredCreditProjected = Math.round(monthlyCredit * 0.88);
 
   const formatPkr = (val: number) => {
     return 'PKR ' + val.toLocaleString('en-PK');
@@ -90,7 +90,7 @@ export const RoiCalculator: React.FC = () => {
                     <span>2. Average Outstanding Customer Credit (Receivables):</span>
                   </span>
                   <span className="px-3 py-1 rounded-md bg-gold/15 text-navy font-bold text-sm">
-                    {formatPkr(monthlyUdhaar)}
+                    {formatPkr(monthlyCredit)}
                   </span>
                 </div>
                 <input
@@ -98,8 +98,8 @@ export const RoiCalculator: React.FC = () => {
                   min="100000"
                   max="5000000"
                   step="50000"
-                  value={monthlyUdhaar}
-                  onChange={(e) => handleSliderChange(setMonthlyUdhaar, Number(e.target.value))}
+                  value={monthlyCredit}
+                  onChange={(e) => handleSliderChange(setMonthlyCredit, Number(e.target.value))}
                   className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-teal"
                 />
                 <div className="flex justify-between text-[10px] text-navy/40 mt-1">
@@ -176,7 +176,7 @@ export const RoiCalculator: React.FC = () => {
                     <CheckCircle2 className="w-3.5 h-3.5 text-teal" />
                     <span>Accelerated Credit Recovery:</span>
                   </span>
-                  <span className="text-teal font-bold">{formatPkr(recoveredUdhaarProjected)}</span>
+                  <span className="text-teal font-bold">{formatPkr(recoveredCreditProjected)}</span>
                 </div>
 
                 <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between">

@@ -84,7 +84,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             </h1>
           </div>
           <p className="font-mono text-xs sm:text-sm text-white/60 tracking-mono mt-3 uppercase">
-            Powering Pakistani Business Off Excel & Paper Khatas
+            Powering Pakistani Business Off Excel & Paper Registers
           </p>
         </div>
 
@@ -158,14 +158,14 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
           <div className="mt-3 font-mono text-xs text-white/50 tracking-mono">
             {progress < 40 && 'Auditing inventory catalog & pricing tiers...'}
-            {progress >= 40 && progress < 80 && 'Migrating customer khatas & supplier balances...'}
+            {progress >= 40 && progress < 80 && 'Migrating customer accounts & supplier balances...'}
             {progress >= 80 && 'POS Billing & Live Dashboard Ready.'}
           </div>
         </div>
 
         {/* Bottom Utility Footer */}
         <div className="flex items-center justify-between font-mono text-[11px] text-white/40 border-t border-white/10 pt-3">
-          <span>MODULES: POS • INVENTORY • KHATA • MOBILE</span>
+          <span>MODULES: POS • INVENTORY • LEDGERS • MOBILE</span>
           <span className="text-teal font-semibold">SECURE CLOUD 256-BIT</span>
         </div>
       </div>

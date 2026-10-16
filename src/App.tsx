@@ -56,7 +56,7 @@ export const App: React.FC = () => {
         {/* Scene 6: Features (Dark Bento Grid with Spotlight Glow Borders & Micro-Visuals) */}
         <FeaturesScene />
 
-        {/* Interactive Khata Leakage & ROI Calculator */}
+        {/* Interactive Revenue Leakage & ROI Calculator */}
         <RoiCalculator />
 
         {/* Scene 7: Industries (Light, Drag-able Tab Strip, 7 Pakistani Sectors, Financial Strip) */}

@@ -54,7 +54,7 @@ export const ComparisonAndProofScene: React.FC = () => {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <X className="w-4 h-4 text-error shrink-0 mt-0.5" />
-                  <span>Customer udhaar recovery is manual</span>
+                  <span>Customer credit recovery is manual</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <X className="w-4 h-4 text-error shrink-0 mt-0.5" />

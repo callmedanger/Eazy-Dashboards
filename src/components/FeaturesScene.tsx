@@ -272,10 +272,10 @@ export const FeaturesScene: React.FC = () => {
                 </button>
               </div>
               <h3 className="text-xl font-display font-bold text-white mb-2">
-                {urduToggled ? 'اردو اور انگریزی' : 'Urdu + English'}
+                {urduToggled ? 'اردو اور انگریزی' : 'English & Bilingual'}
               </h3>
               <p className="text-xs text-white/70 font-body mb-4">
-                Native terminology tailored for local bazaars: Wasooli, Khata, Udhaar, and Munafa.
+                Tailored with clear commercial terms: Cash Recovery, Ledgers, Credit Aging, and Profit Margin.
               </p>
             </div>
 
@@ -283,7 +283,7 @@ export const FeaturesScene: React.FC = () => {
             <div className="p-3 rounded bg-[#141A24] border border-white/10 font-mono text-xs flex items-center justify-between">
               <span className="text-white/60">Cash Collected:</span>
               <span className="text-gold font-bold font-sans">
-                {urduToggled ? 'وصولی: PKR 39.4L' : 'Wasooli: PKR 39.4L'}
+                {urduToggled ? 'وصولی: PKR 39.4L' : 'Revenue: PKR 39.4L'}
               </span>
             </div>
           </div>

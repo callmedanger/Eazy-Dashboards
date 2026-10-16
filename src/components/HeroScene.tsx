@@ -94,7 +94,7 @@ export const HeroScene: React.FC = () => {
     [
       { row: 7, col: 0, colLetter: 'A', val: 'SUBTOTAL' },
       { row: 7, col: 1, colLetter: 'B', val: '6 Rows' },
-      { row: 7, col: 2, colLetter: 'C', val: 'Manual Khata Count' },
+      { row: 7, col: 2, colLetter: 'C', val: 'Manual Ledger Count' },
       { row: 7, col: 3, colLetter: 'D', val: 'Sum = #VALUE!' },
       { row: 7, col: 4, colLetter: 'E', val: '-' },
       { row: 7, col: 5, colLetter: 'F', val: '160' },

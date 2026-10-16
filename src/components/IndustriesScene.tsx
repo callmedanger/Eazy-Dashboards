@@ -27,10 +27,10 @@ export const IndustriesScene: React.FC = () => {
       id: 'distribution',
       name: 'Wholesale & Distribution',
       icon: Truck,
-      headline: 'Built for route delivery and khata recovery.',
+      headline: 'Built for route delivery and credit recovery.',
       points: [
         'Manage multiple delivery vans and rider inventory collections.',
-        'Customer-wise udhaar ledger with automatic credit limits.',
+        'Customer-wise credit ledger with automatic balance limits.',
         'Direct PDF bill dispatch to retailers via WhatsApp.',
       ],
       metric: 'Zero Recovery Leakage',

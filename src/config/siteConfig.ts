@@ -48,7 +48,7 @@ export const NAV_LINKS = [
 export const HERO_COPY = {
   badge: "fx = ERP POWERED BUSINESS",
   headline: "Power your Excel-run business with a modern ERP.",
-  subheadline: "We replace chaotic Excel files, registers, and handwritten khatas with an integrated ERP software suite — featuring counter billing, stock control, and live dashboards on your phone.",
+  subheadline: "We replace chaotic Excel files, registers, and handwritten ledgers with an integrated ERP software suite — featuring counter billing, stock control, and live dashboards on your phone.",
   primaryCta: "Book a Free Software Walkthrough",
   secondaryCta: "See ERP Features",
   selectionPrompt: "Drag to select cells. Watch raw spreadsheet chaos transform into structured ERP intelligence.",
@@ -59,13 +59,13 @@ export const HERO_COPY = {
 export const PROBLEM_COPY = {
   badge: "B2 = MANUAL_SYSTEM_FAILURE",
   headline: "Excel wasn't built to run your entire enterprise.",
-  subheadline: "Pakistani businesses lose lakhs every month to silent formula breaks, stolen stock, untracked udhaar, and relying on one accountant who holds all the passwords.",
+  subheadline: "Businesses lose substantial revenue every month to silent formula breaks, stolen stock, untracked customer credit, and relying on one person who holds all the passwords.",
   pains: [
     {
       id: "versions",
       cellRef: "B4",
       title: "10 files, 10 versions, zero accountability",
-      desc: "Sales_FINAL.xlsx, Stock_Amir.xlsx, Cash_Ledger_v3. Nobody knows what stock is actually in the godown or what today's real balance is.",
+      desc: "Sales_FINAL.xlsx, Stock_Amir.xlsx, Cash_Ledger_v3. Nobody knows what stock is actually in the warehouse or what today's real balance is.",
       stat: "10+",
       statLabel: "Conflicting file versions per week",
       errorType: "#N/A",
@@ -104,7 +104,7 @@ export const PROBLEM_COPY = {
     {
       id: "hours",
       cellRef: "B8",
-      title: "Udhaar & reconciliation takes days of manual cross-checking",
+      title: "Customer credit & reconciliation takes days of manual cross-checking",
       desc: "Matching paper receipts, bank transfers, and delivery notes takes 3 exhausting days at month-end instead of one instant click.",
       stat: "36 hrs",
       statLabel: "Monthly manual reconciliation time (example)",
@@ -132,7 +132,7 @@ export const WORKFLOW_COPY = {
       title: "Data Migration",
       cellRef: "D4",
       action: "We migrate your historical data into the ERP database.",
-      details: "Your inventory balances, pending customer khatas, and supplier credits are cleanly cleansed and imported.",
+      details: "Your inventory balances, pending customer accounts, and supplier credits are cleanly cleansed and imported.",
       statusText: "Clean Database Ingestion (0 Formula Errors)",
     },
     {
@@ -141,7 +141,7 @@ export const WORKFLOW_COPY = {
       cellRef: "E4",
       action: "Setup billing terminals, permissions & barcode printing.",
       details: "We configure staff POS forms, receipt printers, and restrict sensitive margin access with role-based logins.",
-      statusText: "ERP Active: Terminals & Godowns Connected",
+      statusText: "ERP Active: Terminals & Warehouses Connected",
     },
     {
       step: "04",
@@ -165,15 +165,15 @@ export const FEATURES_COPY = [
   },
   {
     id: "inventory",
-    title: "Godown & Stock Control",
+    title: "Warehouse & Stock Control",
     cellRef: "B10",
     desc: "Real-time stock deduction on every sale. Auto low-stock warnings and batch/expiry tracking for wholesale & retail.",
     badge: "WAREHOUSE",
-    highlight: "Zero stock theft",
+    highlight: "Zero stock shrinkage",
   },
   {
-    id: "khata",
-    title: "Digital Khata & Udhaar Recovery",
+    id: "credit",
+    title: "Digital Customer Ledger & Credit Recovery",
     cellRef: "C10",
     desc: "Track every customer's credit limit, aging receivables, and send automated WhatsApp payment reminders with one tap.",
     badge: "CREDIT CONTROL",
@@ -199,7 +199,7 @@ export const FEATURES_COPY = [
     id: "multi-branch",
     title: "Multi-Branch Cloud Sync",
     cellRef: "F10",
-    desc: "Connect multiple stores, branches, or warehouses across Lahore, Karachi, and Islamabad in one central live system.",
+    desc: "Connect multiple stores, branches, or warehouses across major commercial cities in one central live system.",
     badge: "MULTI-STORE",
     highlight: "Centralized control",
   },
@@ -213,11 +213,11 @@ export const FEATURES_COPY = [
   },
   {
     id: "urdu",
-    title: "Urdu + English Bilingual UI",
+    title: "Bilingual English & Local UI",
     cellRef: "H10",
-    desc: "Interface, receipts, and reports tailored with authentic Pakistani business terms: Khata, Wasooli, Udhaar, Munafa.",
+    desc: "Interface, receipts, and reports tailored with intuitive commercial terms: Ledgers, Collections, Credit Aging, and Profit Margin.",
     badge: "LOCALIZED",
-    highlight: "اردو اور انگریزی",
+    highlight: "English & Localized",
   },
 ];
 
@@ -344,7 +344,7 @@ export const COMPARISON_COPY = {
       criterion: "Daily Workflow",
       excel: "Manual typing, fragile formulas, zero audit trail",
       erp: "Heavy, bloated screens; takes 15 clicks for 1 invoice",
-      eazy: "Streamlined 1-second billing, barcode scan & auto khata",
+      eazy: "Streamlined 1-second billing, barcode scan & automated customer ledger",
       verdict: "Speed",
     },
     {
@@ -376,10 +376,10 @@ export const COMPARISON_COPY = {
       verdict: "Secure",
     },
     {
-      criterion: "Pakistani Context & Urdu",
+      criterion: "Commercial Context & Localization",
       excel: "English only; no native WhatsApp or Raast",
       erp: "Foreign localized templates; rigid tax setups",
-      eazy: "Native Urdu, WhatsApp alerts, Raast QR & PKR formatting",
+      eazy: "Native WhatsApp alerts, Raast QR & PKR formatting",
       verdict: "Localized",
     },
   ],
@@ -388,15 +388,15 @@ export const COMPARISON_COPY = {
 export const FAQ_COPY = [
   {
     q: "Is Eazy Dashboard just an online spreadsheet viewer?",
-    a: "No. Eazy Dashboard is a complete Business ERP & Management Software product. We install and configure counter billing terminals, inventory stock tracking, godown control, customer khata management, and give you live executive mobile dashboards.",
+    a: "No. Eazy Dashboard is a complete Business ERP & Management Software product. We install and configure counter billing terminals, inventory stock tracking, warehouse control, customer credit management, and give you live executive mobile dashboards.",
   },
   {
     q: "How does our old Excel and register data get into the software?",
-    a: "Our implementation team handles the complete migration. We take your existing Excel files, vendor price lists, customer khata balances, and product catalogs, clean any errors, and import them directly into your new software.",
+    a: "Our implementation team handles the complete migration. We take your existing Excel files, vendor price lists, customer credit balances, and product catalogs, clean any errors, and import them directly into your new software.",
   },
   {
     q: "Will my staff find it difficult to use?",
-    a: "No. We designed the billing counter and data-entry forms to be dead simple — even cashiers with zero computer background learn it within 15 minutes. It uses bilingual Urdu/English terms like Wasooli, Khata, and Udhaar.",
+    a: "No. We designed the billing counter and data-entry forms to be dead simple — even cashiers with zero computer background learn it within 15 minutes. It uses straightforward commercial business terms like Collections, Invoicing, and Customer Accounts.",
   },
   {
     q: "Can my staff see my business net profit or bank balance?",

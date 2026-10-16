@@ -82,7 +82,7 @@ export const TransformationScene: React.FC = () => {
         <div className="text-center max-w-2xl mb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-teal/30 bg-teal/10 text-teal font-mono text-xs tracking-mono mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>THE SHIFT: FROM KHATA TO CLOUD</span>
+            <span>THE SHIFT: FROM PAPER TO CLOUD</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-display leading-tightest mb-3">
@@ -152,7 +152,7 @@ export const TransformationScene: React.FC = () => {
             {/* Before Badge */}
             <div className="absolute top-4 right-4 z-10 px-3 py-1.5 rounded-md bg-black/80 backdrop-blur-md border border-error/50 text-error font-mono text-xs font-semibold flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-error animate-pulse" />
-              <span>BEFORE: Paper Khatas & Broken Formulas</span>
+              <span>BEFORE: Paper Registers & Broken Formulas</span>
             </div>
           </div>
 

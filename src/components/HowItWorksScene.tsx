@@ -164,7 +164,7 @@ export const HowItWorksScene: React.FC = () => {
                     { col: 'Col A', name: 'Transaction Date', type: 'DATE (YYYY-MM-DD)', sample: '2026-10-02' },
                     { col: 'Col B', name: 'Party / Customer', type: 'TEXT (Urdu/Eng)', sample: 'Tariq Traders LHR' },
                     { col: 'Col C', name: 'Gross Sale (PKR)', type: 'CURRENCY (PKR)', sample: 'PKR 168,000' },
-                    { col: 'Col D', name: 'Payment Status', type: 'ENUM (Paid / Udhaar)', sample: 'Partially Recovered' },
+                    { col: 'Col D', name: 'Payment Status', type: 'ENUM (Paid / Credit)', sample: 'Partially Recovered' },
                   ].map((field) => (
                     <div key={field.col} className="p-3.5 rounded border border-teal/40 bg-teal/5">
                       <div className="flex items-center justify-between mb-1">
@@ -193,13 +193,13 @@ export const HowItWorksScene: React.FC = () => {
                   </div>
 
                   <div className="p-4 rounded-lg bg-[#FAF8F5] border border-navy/10">
-                    <span className="text-[11px] font-mono text-navy/50 block">CASH COLLECTED (WASOOLI)</span>
+                    <span className="text-[11px] font-mono text-navy/50 block">CASH COLLECTED (REVENUE)</span>
                     <span className="text-2xl sm:text-3xl font-mono font-bold text-gold">PKR 3,940,000</span>
                     <span className="text-navy/60 font-mono text-xs block mt-1">81.7% Recovery</span>
                   </div>
 
                   <div className="p-4 rounded-lg bg-[#FAF8F5] border border-navy/10">
-                    <span className="text-[11px] font-mono text-navy/50 block">OUTSTANDING CREDIT (UDHAAR)</span>
+                    <span className="text-[11px] font-mono text-navy/50 block">OUTSTANDING CUSTOMER CREDIT</span>
                     <span className="text-2xl sm:text-3xl font-mono font-bold text-navy">PKR 880,000</span>
                     <span className="text-error font-mono text-xs block mt-1">4 accounts overdue</span>
                   </div>
@@ -254,7 +254,7 @@ export const HowItWorksScene: React.FC = () => {
                     <div className="text-white/80 space-y-1 text-[11px]">
                       <div>• Today&apos;s Revenue: <span className="text-white font-bold">PKR 312,500</span></div>
                       <div>• Cash in Hand: <span className="text-teal font-bold">PKR 240,000</span></div>
-                      <div>• Overdue Udhaar: <span className="text-error font-bold">PKR 72,500</span></div>
+                      <div>• Overdue Credit: <span className="text-error font-bold">PKR 72,500</span></div>
                     </div>
 
                     {/* Smart Alert Badge */}

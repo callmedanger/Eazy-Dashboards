@@ -175,7 +175,7 @@ export const ContactAndFooterScene: React.FC = () => {
             </h2>
 
             <p className="text-sm sm:text-base text-white/70 font-body mb-8 leading-relaxed">
-              Book a live software walkthrough. We will demonstrate counter billing, warehouse stock control, and customer khata management tailored to your industry, plus show you how we migrate your existing Excel records.
+              Book a live software walkthrough. We will demonstrate counter billing, warehouse stock control, and customer credit ledger management tailored to your industry, plus show you how we migrate your existing Excel records.
             </p>
 
             {/* Direct Instant WhatsApp Options (Both Numbers) */}
@@ -392,7 +392,7 @@ export const ContactAndFooterScene: React.FC = () => {
                     What do you use today for records?
                   </label>
                   <div className="grid grid-cols-3 gap-2">
-                    {['Excel Sheets', 'Paper Registers / Khata', 'Other Software'].map((tool) => (
+                    {['Excel Sheets', 'Paper Registers / Ledgers', 'Other Software'].map((tool) => (
                       <button
                         key={tool}
                         type="button"

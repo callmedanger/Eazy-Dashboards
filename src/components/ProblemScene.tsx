@@ -13,15 +13,15 @@ export const ProblemScene: React.FC = () => {
     },
     {
       num: '02',
-      tag: 'UNRECOVERED UDHAAR',
+      tag: 'UNRECOVERED CUSTOMER CREDIT',
       title: 'Ledgers scattered across paper registers.',
       desc: 'Customer balances are scribbled on notebooks. When a customer walks in, you cannot verify their pending dues in 5 seconds.',
-      callout: 'Thousands stuck in khata',
+      callout: 'Thousands stuck in unpaid receivables',
       icon: AlertTriangle,
     },
     {
       num: '03',
-      tag: 'THE GODOWN BLINDSPOT',
+      tag: 'THE WAREHOUSE BLINDSPOT',
       title: 'Stock leaves without an instant entry.',
       desc: 'You only find out an item is out of stock when a customer asks for it and walks away to your competitor across the road.',
       callout: 'Silent loss of daily sales',

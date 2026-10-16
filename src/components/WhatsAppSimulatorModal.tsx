@@ -8,7 +8,7 @@ interface WhatsAppSimulatorModalProps {
 }
 
 export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState<'daily' | 'udhaar' | 'stock'>('daily');
+  const [activeTab, setActiveTab] = useState<'daily' | 'credit' | 'stock'>('daily');
 
   if (!isOpen) return null;
 
@@ -62,14 +62,14 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
           </button>
           <button
             onClick={() => {
-              setActiveTab('udhaar');
+              setActiveTab('credit');
               sound.playTick();
             }}
             className={`flex-1 py-1.5 rounded-md font-semibold transition-colors ${
-              activeTab === 'udhaar' ? 'bg-[#00A884] text-white' : 'text-white/60 hover:text-white'
+              activeTab === 'credit' ? 'bg-[#00A884] text-white' : 'text-white/60 hover:text-white'
             }`}
           >
-            Udhaar Recovery
+            Credit Recovery
           </button>
           <button
             onClick={() => {
@@ -80,7 +80,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
               activeTab === 'stock' ? 'bg-[#00A884] text-white' : 'text-white/60 hover:text-white'
             }`}
           >
-            Godown Alert
+            Warehouse Alert
           </button>
         </div>
 
@@ -94,7 +94,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
         >
           <div className="text-center">
             <span className="px-2.5 py-1 rounded bg-[#182229] text-[10px] text-white/40 uppercase">
-              Today • Karachi Time 21:00
+              Today • Closing Time 21:00
             </span>
           </div>
 
@@ -106,7 +106,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
               </div>
 
               <div className="space-y-1.5 text-[11px] leading-relaxed">
-                <div>Assalam-o-Alaikum Tariq Bhai! Today&apos;s evening closing report:</div>
+                <div>Good evening! Here is today&apos;s closing business summary:</div>
                 <div className="border-t border-white/15 my-2 pt-2" />
                 <div className="flex justify-between">
                   <span className="text-white/70">• Today&apos;s Total Sales:</span>
@@ -121,12 +121,12 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
                   <span className="font-bold text-[#E9EDEF]">PKR 272,200</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white/70">• Total Bills Punched:</span>
+                  <span className="text-white/70">• Total Bills Invoiced:</span>
                   <span className="font-bold text-[#E9EDEF]">84 Invoices</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-white/70">• Today&apos;s Net Margin:</span>
-                  <span className="font-bold text-[#FFD700]">31.4% (Munafa)</span>
+                  <span className="font-bold text-[#FFD700]">31.4% (Net Profit)</span>
                 </div>
                 <div className="border-t border-white/15 my-2 pt-2 text-[10px] text-[#25D366] flex items-center gap-1 font-semibold">
                   <CheckCheck className="w-3.5 h-3.5" />
@@ -136,10 +136,10 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
             </div>
           )}
 
-          {activeTab === 'udhaar' && (
+          {activeTab === 'credit' && (
             <div className="bg-[#005C4B] p-4 rounded-xl rounded-tl-none border border-white/10 text-white max-w-[90%] shadow-md animate-in fade-in">
               <div className="font-bold text-sm text-[#53BDEB] mb-2 flex items-center justify-between">
-                <span>💰 1-Click Udhaar Reminder</span>
+                <span>💰 1-Click Credit Reminder</span>
                 <span className="text-[10px] text-white/60">Auto-Generated</span>
               </div>
 
@@ -154,7 +154,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
                   <div>Terms: 15-Day Cycle (Crossed 30 Days)</div>
                 </div>
                 <div className="text-[11px] italic text-white/80">
-                  &ldquo;Assalam-o-Alaikum Bilal Bhai, aapka monthly khata balance PKR 145,000 pending hai. Meherbani farma kar Raast/Bank se transfer kar dein. Shukriya!&rdquo;
+                  &ldquo;Dear Customer, your outstanding monthly account balance of PKR 145,000 is pending. Please arrange payment via Bank or Raast transfer. Thank you!&rdquo;
                 </div>
                 <div className="pt-2 flex items-center justify-between text-[10px] text-[#25D366]">
                   <span>Detailed Itemized PDF Attached ✓</span>
@@ -168,17 +168,17 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({ 
             <div className="bg-[#005C4B] p-4 rounded-xl rounded-tl-none border border-white/10 text-white max-w-[90%] shadow-md animate-in fade-in">
               <div className="font-bold text-sm text-[#FF7043] mb-2 flex items-center justify-between">
                 <span>⚠️ Low Stock & Expiry Alert</span>
-                <span className="text-[10px] text-white/60">Godown #2</span>
+                <span className="text-[10px] text-white/60">Warehouse #2</span>
               </div>
 
               <div className="space-y-2 text-[11px]">
                 <div className="p-2.5 rounded bg-black/40 border border-[#FF7043]/30 text-[10px] space-y-1">
-                  <div className="text-white font-bold">• Basmati Rice 25kg (Kala Shah Kaku)</div>
+                  <div className="text-white font-bold">• Basmati Rice 25kg Bags</div>
                   <div className="text-white/70">Remaining: <span className="text-[#FF7043] font-bold">4 Bags</span> (Minimum safe level: 25 Bags)</div>
                   <div className="text-white/70">Estimated Run-out: <span className="text-[#FF7043] font-bold">Tomorrow afternoon</span></div>
                 </div>
                 <div className="text-[10px] text-white/80">
-                  Supplier Tariq Traders contact: 0300-1234567. 1-tap reorder PO prepared.
+                  Supplier contact: 0300-1234567. 1-tap reorder PO prepared.
                 </div>
               </div>
             </div>
